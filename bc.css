@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    position: relative;
+}
+
+main {
+   height: 100vh;
+   width: 100vw;
+}
+
+main.editMode, main.bgEdit {
+    margin-top: 3rem;
+}
+
+#bg, #card {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+#card div.element, #card input, #card textarea, #card .fieldshim, #card img,
+#bg div.element, #bg input, #bg textarea, #bg .fieldshim, #bg img {
+    position: absolute;
+    pointer-events: all;
+}
+.behaves-on-click {
+   cursor: pointer;
+}
+
+#card div.element, #bg div.element {
+    white-space: pre-line;
+}
+
+#editbar {
+    background-color: #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 2000;
+    text-align: center;
+    font-family: sans-serif;
+}
+#editbar ul {
+    list-style: none;
+    padding-left: 0;
+}
+#editbar ul li {
+    display: inline-block;
+    padding: 0 2rem;
+}
+#editbar a { text-decoration: none; }
+#editbar a:hover { text-decoration: underline; }
+
+#editbar li.bgmode a {
+   color: red;
+}
+
+#editbar li.close {
+   float: right;
+}
+#editbar li.close a:hover,
+#editmodal a.close {
+   text-decoration: none;
+}
+
+#editbar .readout {
+    position: absolute;
+    text-align: left;
+    width: 12rem;
+    top: 5px;
+    left: 8px;
+    font-size: small;
+}
+
+main.bgEdit #editbar { border-bottom: 3px dashed black; }
+
+main.editMode #card div.element:hover,
+main.editMode #card input:hover,
+main.editMode #card textarea:hover,
+main.editMode #card img:hover,
+main.editMode #card .fieldshim:hover {
+    border: 1px solid red;
+}
+
+main.bgEdit #card { display: none; }
+
+main.bgEdit #bg div.element:hover,
+main.bgEdit #bg input:hover,
+main.bgEdit #bg textarea:hover,
+main.bgEdit #bg img:hover,
+main.bgEdit #bg .fieldshim:hover {
+    border: 1px solid red;
+}
+
+#editmodal {
+   background-color: aliceblue;
+   padding: 1.2rem;
+   width: 24rem;
+   height: 100%;
+   position: fixed;
+   right: 0;
+}
+#editmodal form {
+   overflow-y: scroll;
+}
+#editmodal p {
+    margin-bottom: 2rem;
+}
+#editmodal table p {
+   margin-bottom: 1rem;
+}
+#editmodal textarea {
+   margin-bottom: 2rem;
+}
+
+#editModalTabs {
+    list-style: none;
+    padding-left: 0;
+    font-family: sans-serif;
+    font-size: small;
+}
+#editModalTabs li {
+   display: inline-block;
+   width: 48%;
+   border: 1px solid cornflowerblue;
+   border-bottom: 0;
+   padding: 2px;
+   text-align: center;
+   background-color: cornflowerblue;
+   color: white;
+}
+#editModalTabs li.hilited {
+   background-color: transparent;
+   color: inherit;
+}
+
+div.behavior {
+   border: 1px solid black;
+}
+div.behavior.behav-if {
+   background-color: #f9ef7b;
+}
+div.behavior.behav-jumpTo {
+   background-color: #339966;
+}
+div.behavior.behav-setTruth {
+   background-color: #6649dc;
+}
+div.behavior.behav-removeTruth {
+   background-color: #b90759;
+}
+div.behavior section {
+   padding: 5px;
+}
+div.behavior aside {
+   background-color: #eee;
+   padding: 5px;
+   font-family: sans;
+}
+div.behavior > select {
+   margin: 5px;
+   font-size: 1.3rem;
+}
+div.behavior > div {
+   background-color: white;
+}
+
+ul.behaviors {
+   list-style: none;
+   padding-left: 0;
+}
+div.behavior ul.behaviors {
+   padding: 5px 5px 5px 12px;
+   background-color: #eee;
+}
+ul.behaviors li {
+   margin-top: 8px;
+}
+ul.behaviors li:first-child {
+   margin-top: 0;
+}
+
+#addimage {
+    height: 2rem;
+    margin-top: -2px;
+    padding-top: 1rem;
+    background-color: aquamarine;
+}
+
+main.editMode #card .movable,
+main.bgEdit #bg .movable {
+    cursor: move;
+}
+
+main.editMode,
+main.bgEdit {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
