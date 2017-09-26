@@ -200,6 +200,13 @@ ul.behaviors li:first-child {
    margin-top: 0;
 }
 
+button.add-behavior { margin-top: 0.7rem; }
+
+textarea.stylesheet {
+   height: 28rem;
+   width: 98%;
+}
+
 #addimage {
     height: 2rem;
     margin-top: -2px;
