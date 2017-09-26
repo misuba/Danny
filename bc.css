@@ -97,6 +97,21 @@ main.bgEdit #bg .fieldshim:hover {
     border: 1px solid red;
 }
 
+.fieldshim {
+    border: 1px solid #888;
+    padding: 3px;
+    font-family: Helvetica,sans-serif;
+    /*overflow: hidden;*/
+}
+.fieldshim p {
+    margin: 0;
+}
+.fieldshim aside {
+    font-size: small;
+    height: 1rem;
+    /* OVERFLOW MESSES UP MY DRAG CODE. WHY DOES IT MESS UP MY DRAG CODE. */
+}
+
 #editmodal {
    background-color: aliceblue;
    padding: 1.2rem;
