@@ -1,0 +1,12 @@
+.pad {
+  padding: 4px;
+}
+
+.ctr {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+  color: red;
+}
