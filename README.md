@@ -22,7 +22,7 @@ Multiuser (we're going to get stacks with cards sourced from multiple URLs to ha
 Further out, there'll be some objects that will enable more flexible layouts, and some ways to take in other external data sources. (Also better text editing, more field options, blah blah etc.)
 
 ## How to use
-Maybe avoid it still? But we'll update this document with a canonical Dat URL to fork from. (The only web browser at the moment that supports the Dat protocol is [Beaker](https://beakerbrowser.com/). If that changes I will for sure let you know.) If you fire it up yourself, the Alt key is your friend: alt-left and right arrow keys move between cards, alt-enter brings up edit mode, and alt-click is a short cut to editing elements.
+Maybe avoid it still? But you can fork from `dat://danny-misuba.hashbase.io/`. (The only web browser at the moment that supports the Dat protocol is [Beaker](https://beakerbrowser.com/). If that changes I will for sure let you know.) If you fire it up yourself, the Alt key is your friend: alt-left and right arrow keys move between cards, alt-enter brings up edit mode, and alt-click is a short cut to editing elements. There is a (barely) more extensive tutorial at `dat://danny-tutorial-misuba.hashbase.io/`.
 
 ## Danny?
 Danny is named for [Danny Goodman](https://dannyg.com/), who set me on the path to doing this twice - the second time with his still-in-print *JavaScript Bible*. Thank you!
