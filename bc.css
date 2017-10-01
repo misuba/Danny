@@ -206,6 +206,10 @@ textarea.stylesheet {
    height: 28rem;
    width: 98%;
 }
+textarea.elmtext {
+    width: 98%;
+    height: 8rem;
+}
 
 #addimage {
     height: 2rem;
