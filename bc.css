@@ -30,9 +30,16 @@ main.editMode, main.bgEdit {
    cursor: pointer;
 }
 
-#card div.element, #bg div.element {
+/* #card div.element, #bg div.element {
     white-space: pre-line;
+} */
+#card div.element p, #bg div.element p {
+   margin: 1em 0 0 0;
 }
+#card div.element p:first-child, #bg div.element p:first-child {
+   margin: 0;
+}
+
 
 #editbar {
     background-color: #eee;
