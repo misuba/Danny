@@ -137,7 +137,7 @@ main.bgEdit #bg .fieldshim:hover {
    margin-bottom: 1rem;
 }
 #editmodal textarea {
-   margin-bottom: 2rem;
+   /* margin-bottom: 2rem; */
 }
 
 #editModalTabs {
@@ -228,6 +228,11 @@ textarea.elmtext {
 main.editMode #card .movable,
 main.bgEdit #bg .movable {
     cursor: move;
+}
+
+main.editMode #card .hidden,
+main.bgEdit #bg .hidden {
+    border: 3px dotted #777;
 }
 
 main.editMode,
