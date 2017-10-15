@@ -127,8 +127,9 @@ main.bgEdit #bg .fieldshim:hover {
    position: fixed;
    right: 0;
 }
-#editmodal form {
+#editmodal div.scrolly {
    overflow-y: scroll;
+   max-height: calc(100% - 2rem);
 }
 #editmodal p {
     margin-bottom: 2rem;
