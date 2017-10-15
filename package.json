@@ -7,10 +7,17 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test babel-node mocha --compilers js:babel-core/register"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0"
+    ]
   },
   "author": "misuba@gibberish.com",
-  "license": "GPL",
+  "license": "MPL-2.0",
+  "repository": "https://github.com/misuba/Danny",
   "dependencies": {
     "choo": "^5.6.2",
     "commonmark": "^0.28.1",
@@ -18,9 +25,15 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-amd": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "babelify": "^7.3.0",
-    "choo-test": "^0.3.0",
-    "mochify": "^3.3.0"
+    "chai": "^4.1.2",
+    "mochify": "^3.3.0",
+    "node-dat-archive": "^1.5.0",
+    "requirejs": "^2.3.5"
   }
 }

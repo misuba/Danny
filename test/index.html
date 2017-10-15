@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mocha Blood</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+    <script src="../node_modules/mocha/mocha.js"></script>
+
+    <script>mocha.setup('bdd')</script>
+
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/requirejs/require.js"></script>
+
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script>
+      var files = [
+          './integration.js'
+      ];
+      require(files, function() {
+        mocha.run();
+      });
+     </script>
+</body>
+</html>

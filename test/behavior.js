@@ -1,6 +1,8 @@
 const assert = require('assert');
 
-const {parseAndRunBehaviors} = require('../lib/behavior');
+const parseAndRunBehaviors = require('../lib/behavior').parseAndRunBehaviors;
+
+const stateApi = require('../lib/stateApi');
 
 
 const startState = {
@@ -21,27 +23,29 @@ const startState = {
       ]
     },
   ],
-  backgrounds: [
-
-  ],
+  backgrounds: {},
   currentCard: 0
 };
 
 let theRecord = [];
 
 const mockEmit = {
-  emit: function() {
-    const args = [...arguments];
+  emit: function(...args) {
     theRecord.push(args);
   }
 };
 
 
+
+
 describe('behaviors', function() {
+  const DatArchive = require('node-dat-archive');
+
   let state;
 
   beforeEach(function() {
     state = Object.assign({}, startState);
+    state = stateApi(state, mockEmit);
     theRecord = [];
   });
 
@@ -100,10 +104,12 @@ describe('behaviors', function() {
     // live alongside the plain one?
     // or should we just test that the behavior routing works and emits the event
 
+
     beforeEach(function() {
-      state.cards[0].background = 0;
-      state.cards[1].background = 1;
-      state.cards[2] = {background: 0};
+      state.backgrounds = {'0': {name: '0'}, '1': {name: '1'}};
+      state.cards[0].background = '0';
+      state.cards[1].background = '1';
+      state.cards[2] = {background: '0'};
     });
 
     it('does a simple go-to-next-card', function(done) {
@@ -140,7 +146,7 @@ describe('behaviors', function() {
         assert(state.nextCard == 2);
         assert(theRecord[0].includes('goto'));
         done();
-      }, 1);
+      }, 10);
     });
 
     it('does a go-to-next-card in background, wrapping around', function(done) {
@@ -176,9 +182,10 @@ describe('behaviors', function() {
   // we duplicated that code, we can duplicate this code. :-P
   describe('goToPreviousCard', function() {
     beforeEach(function() {
-      state.cards[0].background = 0;
-      state.cards[1].background = 1;
-      state.cards[2] = {background: 0};
+      state.backgrounds = {'0': {name: '0'}, '1': {name: '1'}};
+      state.cards[0].background = '0';
+      state.cards[1].background = '1';
+      state.cards[2] = {background: '0'};
       state.currentCard = 2;
     });
 
@@ -195,7 +202,7 @@ describe('behaviors', function() {
     });
 
     it('does a simple go-to-prev-card, calling for no wrapsies', function(done) {
-      const behaviors = [{'goToNextCard': 'stack', 'wrap': false}]
+      const behaviors = [{'goToPreviousCard': 'stack', 'wrap': false}]
       state.cards[0].elements[0].behavior = behaviors;
       parseAndRunBehaviors(state, mockEmit.emit, behaviors);
 
@@ -247,4 +254,46 @@ describe('behaviors', function() {
       }, 1);
     });
   });
+
+  describe('clickButton', function() {
+    it('lists out named buttons in the card and background', function() {
+
+    });
+
+    it('does the behaviors of the named button', function() {
+
+    });
+  });
+
+  describe('setVisibility', function() {
+    it('lists out named buttons in the card and background');
+
+    it('toggles the visibility of the named button or field');
+  });
+
+  describe('setValue', function() {
+    it('lists out the env\'s fields only');
+
+    it('sets the value whether in the card or the background');
+  });
+
+  describe('startTally', function() {
+    it('creates a new key in the tallies object');
+
+    it('does nothing if the tally already exists');
+  });
+
+  describe('removeTally', function() {
+    it('removes a key in the tallies object');
+  });
+
+  describe('tallyUp', function() {
+    it('increments a tally by a set amount');
+
+    it('decrements a tally by a set amount');
+
+    it('sets a tally to a specified number');
+  });
+
+
 });
