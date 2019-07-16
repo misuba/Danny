@@ -33,9 +33,10 @@ MPL 2
 # The road to 0.2 lol
 
 * Break it up! Standalone library to turn data into cards, backgrounds, fields, etc.
+  * Not a Beaker-specific app.
+  * Capacity to dump the stack JSON and let you copy it out and save it
 * Separately do the UI, maybe by providing hooks.
   * Provide a default UI package built in Svelte
 * Don't add behavior to things from out of saved stack data
   * Those have to be added in your JS code, essentially jQuery/Concrete style
   * So a stack is (at least) two files, not one :-( but whatevs
-  
