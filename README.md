@@ -29,3 +29,13 @@ Danny is named for [Danny Goodman](https://dannyg.com/), who set me on the path 
 
 ## License
 MPL 2
+
+# The road to 0.2 lol
+
+* Break it up! Standalone library to turn data into cards, backgrounds, fields, etc.
+* Separately do the UI, maybe by providing hooks.
+  * Provide a default UI package built in Svelte
+* Don't add behavior to things from out of saved stack data
+  * Those have to be added in your JS code, essentially jQuery/Concrete style
+  * So a stack is (at least) two files, not one :-( but whatevs
+  
